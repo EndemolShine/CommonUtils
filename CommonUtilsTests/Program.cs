@@ -15,6 +15,8 @@ namespace CommonUtilsTests
         {
 
             // Test applicationLogs
+
+            ApplicationLog.WriteEntry(Assembly.GetExecutingAssembly().GetName().Name);
             ApplicationLog.WriteEntry("Information message", EventLogEntryType.Information, MethodBase.GetCurrentMethod().Name, Assembly.GetExecutingAssembly().GetName().Name);
             ApplicationLog.WriteEntry("Warning message", EventLogEntryType.Warning, MethodBase.GetCurrentMethod().Name, Assembly.GetExecutingAssembly().GetName().Name);
             ApplicationLog.WriteEntry("Error message", EventLogEntryType.Error, MethodBase.GetCurrentMethod().Name, Assembly.GetExecutingAssembly().GetName().Name);

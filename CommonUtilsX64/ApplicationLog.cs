@@ -42,11 +42,41 @@ namespace CommonUtilsX64
             }
         }
 
-        public static bool WriteEntry(string pErrorMsg, EventLogEntryType pMessageType, string pFunction, string pAppName)
+        public static bool WriteEntry(string pAppName)
         {
             var w = new ApplicationLog(pAppName);
             if (w._logFile == null) return false;
-            w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pErrorMsg} in {pFunction}()\n");
+
+            w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()}\n");
+            w._logFile.Flush();
+            w._logFile.Close();
+            return true;
+        }
+
+        public static bool WriteEntry(string pMsg, EventLogEntryType pMessageType, string pFunction, string pAppName)
+        {
+            var w = new ApplicationLog(pAppName);
+            if (w._logFile == null) return false;
+
+            switch (pMessageType)
+            {
+                case EventLogEntryType.Information:
+                    w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg}\n");
+                    break;
+                case EventLogEntryType.Warning:
+                    w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
+                    break;
+                case EventLogEntryType.Error:
+                    w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
+                    break;
+                case EventLogEntryType.SuccessAudit:
+                    w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
+                    break;
+                case EventLogEntryType.FailureAudit:
+                    w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
+                    break;
+            }
+
             w._logFile.Flush();
             w._logFile.Close();
             return true;
