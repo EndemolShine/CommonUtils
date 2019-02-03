@@ -21,6 +21,14 @@ namespace CommonUtilsX64
                     return;
                 }
 
+                var logLevel = ConfigurationManager.AppSettings["LogLevel"];
+
+                if (logLevel == null)
+                {
+                    Console.WriteLine("Error ==> LogLevel not set in application.");
+                    return;
+                }
+
                 var di = new DirectoryInfo(logfileDir);
                 if (!di.Exists)
                     di.Create();
@@ -46,8 +54,8 @@ namespace CommonUtilsX64
         {
             var w = new ApplicationLog(pAppName);
             if (w._logFile == null) return false;
-
-            w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()}\n");
+            if (Convert.ToInt16(ConfigurationManager.AppSettings["LogLevel"]) == 3)
+                w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()}\n");
             w._logFile.Flush();
             w._logFile.Close();
             return true;
@@ -58,22 +66,33 @@ namespace CommonUtilsX64
             var w = new ApplicationLog(pAppName);
             if (w._logFile == null) return false;
 
+            /* LogLevels
+             *
+             * 0 = No logging, 1 = Errors, 2 Errors & Warnings, 3 = Errors, Warnings & Information
+             *
+             */
+
             switch (pMessageType)
             {
                 case EventLogEntryType.Information:
-                    w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg}\n");
+                    if (Convert.ToInt16(ConfigurationManager.AppSettings["LogLevel"]) == 3)
+                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg}\n");
                     break;
                 case EventLogEntryType.Warning:
-                    w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
+                    if (Convert.ToInt16(ConfigurationManager.AppSettings["LogLevel"]) >= 2)
+                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
                     break;
                 case EventLogEntryType.Error:
-                    w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
+                    if (Convert.ToInt16(ConfigurationManager.AppSettings["LogLevel"]) >= 1)
+                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
                     break;
                 case EventLogEntryType.SuccessAudit:
-                    w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
+                    if (Convert.ToInt16(ConfigurationManager.AppSettings["LogLevel"]) == 3)
+                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
                     break;
                 case EventLogEntryType.FailureAudit:
-                    w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
+                    if (Convert.ToInt16(ConfigurationManager.AppSettings["LogLevel"]) >= 1)
+                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
                     break;
             }
 
