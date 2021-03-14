@@ -1,0 +1,11 @@
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsX64\bin\Release\CommonUtilsX64.dll
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsX64\bin\Release\CommonUtilsX64.pdb
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsX64\obj\Release\CommonUtilsX64.csproj.CoreCompileInputs.cache
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsX64\obj\Release\CommonUtilsX64.dll
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsX64\obj\Release\CommonUtilsX64.pdb
+C:\Users\x02151\source\repos\EndemolShine\CommonUtils\CommonUtilsX64\bin\Release\CommonUtilsX64.dll
+C:\Users\x02151\source\repos\EndemolShine\CommonUtils\CommonUtilsX64\bin\Release\CommonUtilsX64.pdb
+C:\Users\x02151\source\repos\EndemolShine\CommonUtils\CommonUtilsX64\obj\Release\CommonUtilsX64.csprojAssemblyReference.cache
+C:\Users\x02151\source\repos\EndemolShine\CommonUtils\CommonUtilsX64\obj\Release\CommonUtilsX64.csproj.CoreCompileInputs.cache
+C:\Users\x02151\source\repos\EndemolShine\CommonUtils\CommonUtilsX64\obj\Release\CommonUtilsX64.dll
+C:\Users\x02151\source\repos\EndemolShine\CommonUtils\CommonUtilsX64\obj\Release\CommonUtilsX64.pdb

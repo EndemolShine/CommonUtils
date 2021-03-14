@@ -1,0 +1,10 @@
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsTests\bin\Release\CommonUtilsTests.exe.config
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsTests\bin\Release\CommonUtilsTests.exe
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsTests\bin\Release\CommonUtilsTests.pdb
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsTests\bin\Release\CommonUtilsX64.dll
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsTests\bin\Release\CommonUtilsX64.pdb
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsTests\obj\Release\CommonUtilsTests.csprojAssemblyReference.cache
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsTests\obj\Release\CommonUtilsTests.csproj.CoreCompileInputs.cache
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsTests\obj\Release\CommonUtilsTests.csproj.CopyComplete
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsTests\obj\Release\CommonUtilsTests.exe
+D:\Users\X02151\Source\Repos\EndemolShine\CommonUtils\CommonUtilsTests\obj\Release\CommonUtilsTests.pdb

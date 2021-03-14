@@ -58,7 +58,7 @@ namespace CommonUtilsX64
             var w = new ApplicationLog(pAppName);
             if (w._logFile == null) return -1;
             if (Convert.ToInt16(ConfigurationManager.AppSettings["LogLevel"]) == 3)
-                w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()}\n");
+                w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()}");
             w._logFile.Flush();
             w._logFile.Close();
             return 0;
@@ -81,24 +81,24 @@ namespace CommonUtilsX64
             {
                 case EventLogEntryType.Information:
                     if (Convert.ToInt16(ConfigurationManager.AppSettings["LogLevel"]) == 3)
-                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg}\n");
+                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg}");
                     break;
                 case EventLogEntryType.Warning:
                     if (Convert.ToInt16(ConfigurationManager.AppSettings["LogLevel"]) >= 2)
-                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
+                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()");
                     break;
                 case EventLogEntryType.Error:
                     if (Convert.ToInt16(ConfigurationManager.AppSettings["LogLevel"]) >= 1)
-                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
+                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()");
                     retval++;
                     break;
                 case EventLogEntryType.SuccessAudit:
                     if (Convert.ToInt16(ConfigurationManager.AppSettings["LogLevel"]) == 3)
-                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
+                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()");
                     break;
                 case EventLogEntryType.FailureAudit:
                     if (Convert.ToInt16(ConfigurationManager.AppSettings["LogLevel"]) >= 1)
-                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()\n");
+                        w._logFile.WriteLine($"{DateTime.Now.ToLocalTime()} {pMessageType}: {pMsg} in {pFunction}()");
                     retval++;
                     break;
             }
